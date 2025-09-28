@@ -13,7 +13,6 @@ const Layers = () => {
 		return {
 			sorted: state.canvas.canvasLayersSorted,
 			layers: state.canvas.canvasLayers
-			// Add any necessary state selectors here
 		}
 	});
 
@@ -33,9 +32,9 @@ const Layers = () => {
 					<LayersItem
 						key={layerId}
 						id={layerId}
-						layer={layers[layerId]} // Pass the layer object directly
-						canDelete={Object.keys(layers).length > 1} // Allow deletion if more than one layer exists
-						isLastLayer={isLastLayer} // Pass the isLastLayer prop
+						layer={layers[layerId]} 
+						canDelete={Object.keys(layers).length > 1} 
+						isLastLayer={isLastLayer} 
 					/>
 				)
 			})}

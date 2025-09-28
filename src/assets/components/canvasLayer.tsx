@@ -28,16 +28,9 @@ const CanvasLayerItem = (props: Props) => {
 	})
 
 
-	// Initialize settings for the canvas.
 	useEffect(() => {
 		const canvasRef = canvasContext.current
 		if (!canvasRef) return
-
-		const currentData = {w: canvasRef.width, h: canvasRef.height}
-
-		console.log('currentData', currentData)
-		console.log('canvas', canvas)
-		console.log('canvasSize.current', canvasSize.current)
 
 		canvasRef.width = canvas.width * 2;
 		canvasRef.height = canvas.height * 2;
@@ -46,12 +39,11 @@ const CanvasLayerItem = (props: Props) => {
 		const ctx = canvasRef.getContext('2d')
 		if (!ctx) return
 		contextRef.current = ctx
-		contextRef.current.scale(2, 2) // Scale the context to match the canvas size
-		contextRef.current.imageSmoothingQuality = 'high' // Set image smoothing quality to high
-		contextRef.current.lineJoin = 'round' // Set line join style to round
+		contextRef.current.scale(2, 2)
+		contextRef.current.imageSmoothingQuality = 'high'
+		contextRef.current.lineJoin = 'round'
 
 
-		console.log('tempImage', savedTempImage.current)
 		// Restore the saved content if it exists
 		if (savedTempImage.current && savedTempImage.current.src) {
 			contextRef?.current?.drawImage(savedTempImage.current, 0, 0, savedTempImage.current.naturalWidth, savedTempImage.current.naturalHeight, 0, 0, canvasSize.current.width, canvasSize.current.height)
@@ -71,10 +63,6 @@ const CanvasLayerItem = (props: Props) => {
 		contextRef.current.lineWidth = brush.size
 		contextRef.current.globalAlpha = brush.opacity
 		contextRef.current.lineCap = brush.shape || 'round'
-		//contextRef.current.shadowBlur = 25 // Reset shadow blur
-		//contextRef.current.shadowColor = brush.color // Reset shadow color
-		//contextRef.current.shadowOffsetX = 0 // Reset shadow offset X
-		//contextRef.current.shadowOffsetY = 0 // Reset shadow offset Y
 
 		contextRef.current.globalCompositeOperation = 'source-over' // Set composite operation for eraser
 		if (brush.toolType === 'eraser') {
@@ -114,13 +102,11 @@ const CanvasLayerItem = (props: Props) => {
 
 		const tempImage = new Image()
 
-		console.log('canvasRef', canvasRef)
 		canvasRef.toBlob((blob) => {
 			if (!blob) {
 				console.error('Failed to create blob from canvas')
 				return
 			}
-			console.log('blob created:', blob)
 			tempImage.src = URL.createObjectURL(blob)
 			savedTempImage.current = tempImage // Save the current content of the canvas
 		}) 

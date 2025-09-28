@@ -2,11 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { BrushData } from "../types";
 
-/* interface BrushData {
-  size: number;
-  color: string;
-}
- */
 const initialState: BrushData = {
   size: 5,
   color: "#000000",

@@ -37,14 +37,13 @@ const LayersItem = (props: LayerItemProps) => {
 		if (debouncedName !== name) {
 			return setTimeout(() => {handleRename()}, 300);
 		} else {
-			dispatch(setCanvasName({id, name: debouncedName})); // Dispatch the action to rename the layer
+			dispatch(setCanvasName({id, name: debouncedName}));
 		}
 	}
 
 	const handleToggleVisibility = () => {
-		// Logic to toggle layer visibility
-		if (isLastLayer) return; // Prevent toggling visibility if it's the last layer
-		dispatch(toggleVisibility(id)); // Dispatch the action to toggle visibility
+		if (isLastLayer) return; 
+		dispatch(toggleVisibility(id)); 
 	}
 
 	const handleDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {

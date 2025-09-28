@@ -4,31 +4,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import {addCanvasLayer, setCanvasSize} from '../../store/canvasSlice'
 import CanvasLayerItem from './canvasLayer'
 
-/* const dataMap = {
-	top: {
-		axis: 'y',
-		expand: 'y-',
-		expandCheck: '>',
-		shrink: 'y+',
-		shrinkCheck: '<'
-	},
-	bottom: {
-		axis: 'y',
-		expand: 'y+',
-		shrink: 'y-'
-	},
-	left: {
-		axis: 'x',
-		expand: 'x-',
-		shrink: 'x+'
-	},
-	right: {
-		axis: 'x',
-		expand: 'x+',
-		shrink: 'x-'
-	}
-} */
-
 const Canvas = () => {
 	const dispatch = useDispatch()
 	const {brush, canvas} = useSelector((state: RootState) => {
@@ -148,14 +123,7 @@ const Canvas = () => {
 	}
 
 	containerRef.current?.addEventListener('mousemove', (e: MouseEvent) => {
-		//console.log('e', e)
 		const coords = {x: e.clientX, y: e.clientY}
-
-		//brushRef.current?.style.setProperty('--brush-x', `${coords.x}px`)
-		//brushRef.current?.style.setProperty('--brush-y', `${coords.y}px`)
-		console.log('e', e)
-		console.log('coords.x', coords.x + 'px')
-		console.log('coords.y',  coords.y + 'px')
 
 		if (!brushRef.current) return
 		brushRef.current.style.left = coords.x + 'px';

@@ -14,7 +14,6 @@ export const useDebounce = (value: string | number, delay: number) => {
             setDebouncedValue(value);
         }, delay);
 
-        // Cleanup timeout on value change or unmount
         return () => {
             clearTimeout(handler);
         };

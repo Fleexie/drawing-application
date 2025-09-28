@@ -23,9 +23,6 @@ const ExportDialogCanvas = () => {
 		const width = canvasLayers[0].width;
 		const height = canvasLayers[0].height;
 
-		console.log('mergedCanvas', mergedCanvas)
-		console.log('ctx', ctx)
-
 		if (!ctx || !mergedCanvas) return;
 
 		mergedCanvas.width = width;
@@ -35,20 +32,15 @@ const ExportDialogCanvas = () => {
 			ctx.drawImage(layer, 0, 0, width, height);
 		});
 
-		console.log('mergedCanvasRef', mergedCanvasRef)
-
 		if (mergedCanvasRef.current) {
 			const dataUrl = mergedCanvas.toDataURL('image/png');
 
-			console.log('dataUrl', dataUrl)
 			return dataUrl;
 		}
 	}
 
 	const handleExport = () => {
 		const canvasLayers = document.querySelectorAll('[data-layer-id]') as NodeListOf<HTMLCanvasElement>;
-		console.log('canvasLayersSore', canvasLayersSore)
-		console.log('canvasLayers', canvasLayers)
 		let layersArray = Array.from(canvasLayers);
 
 		if (!includeHidden) {
@@ -59,8 +51,6 @@ const ExportDialogCanvas = () => {
 				return true;
 			})
 		}
-
-		console.log('layersArray', layersArray)
 
 		const flattenedDataUrl = flattenCanvasLayers(layersArray as HTMLCanvasElement[]);
 

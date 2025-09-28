@@ -29,7 +29,6 @@ const BrushToolbox = () => {
 			initial={{x: '-100%'}}
 			animate={{x: leftToolboxOpen ? '5%' : '-90%'}}
 			transition={{duration: 0.2, ease: 'easeInOut'}}
-			//onClick={() => dispatch(toggleToolbox('left'))}
 			whileHover={{x: !leftToolboxOpen ? '-70%' : '5%'}}
 
 				className='toolbox'
