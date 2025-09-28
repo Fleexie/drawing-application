@@ -1,0 +1,32 @@
+:root {
+	--chosen-color: #000; // Default primary color
+	--canvas-width: 800px; // Default canvas width
+	--canvas-height: 600px; // Default canvas height
+}
+
+$colors: (
+	primary-color: #3498db,
+	secondary-color: #2ecc71,
+	danger-color: #e74c3c,
+	warning-color: #f1c40f,
+	info-color: #8e44ad,
+	light-color: #ecf0f1,
+	dark-color: #2c3e50,
+
+	// Text colors
+	text-primary: #333333,
+	text-secondary: #555555,
+	text-muted: #777777,
+
+	// Background colors
+	bg-light: #ffffff,
+	bg-dark: #2c3e50,
+
+	// Border colors
+	border-light: #dcdcdc,
+	border-dark: #444444,
+
+	// Utility colors
+	success-color: #28a745,
+	error-color: #dc3545,
+);

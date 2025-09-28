@@ -1,0 +1,18 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+span, p, a, h1, h2, h3, h4, h5, h6, button {
+  font-family: 'Roboto', sans-serif;
+  color: #333; // Default text color
+}
+
+body{  
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f8f9fa; // Light background for better contrast
+}
