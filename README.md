@@ -6,6 +6,8 @@ The project explores how to build a drawing interface with multiple tools, share
 
 ## Demo
 
+![image](./public/Empty%20Canvas.png)
+
 Live demo: https://drawing-application-two.vercel.app/
 
 ## Tech stack
@@ -60,3 +62,8 @@ This project is still a work in progress. If I were to continue developing it, I
 ```bash
 npm install
 npm run dev
+```
+
+![image](./public/Canvas%20with%20drawing.png)
+
+![image](./public/Export%20Canvas.png)
